@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/workout-duration/build/static/css/main.58b278a1.chunk.css",
+    "main.js": "/workout-duration/build/static/js/main.611156ab.chunk.js",
+    "main.js.map": "/workout-duration/build/static/js/main.611156ab.chunk.js.map",
+    "runtime-main.js": "/workout-duration/build/static/js/runtime-main.d90c1154.js",
+    "runtime-main.js.map": "/workout-duration/build/static/js/runtime-main.d90c1154.js.map",
+    "static/css/2.25ff1c20.chunk.css": "/workout-duration/build/static/css/2.25ff1c20.chunk.css",
+    "static/js/2.282a8c6a.chunk.js": "/workout-duration/build/static/js/2.282a8c6a.chunk.js",
+    "static/js/2.282a8c6a.chunk.js.map": "/workout-duration/build/static/js/2.282a8c6a.chunk.js.map",
+    "index.html": "/workout-duration/build/index.html",
+    "static/css/2.25ff1c20.chunk.css.map": "/workout-duration/build/static/css/2.25ff1c20.chunk.css.map",
+    "static/css/main.58b278a1.chunk.css.map": "/workout-duration/build/static/css/main.58b278a1.chunk.css.map",
+    "static/js/2.282a8c6a.chunk.js.LICENSE.txt": "/workout-duration/build/static/js/2.282a8c6a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d90c1154.js",
+    "static/css/2.25ff1c20.chunk.css",
+    "static/js/2.282a8c6a.chunk.js",
+    "static/css/main.58b278a1.chunk.css",
+    "static/js/main.611156ab.chunk.js"
+  ]
+}
