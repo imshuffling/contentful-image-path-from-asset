@@ -1,6 +1,6 @@
-# Contentful Image Path from a URL asset field
+# A Simple Contentful App to generate a URL path from a asset field.
 
-A Simple Contentful App to generate a URL path from a asset field.
+This is an example usecase if a FE client cannot handle nested queries using the delivery API.
 
 https://user-images.githubusercontent.com/739061/115303286-5a0f9a80-a15b-11eb-8232-c057a5b3ea35.mov
 
