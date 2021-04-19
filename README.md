@@ -1,6 +1,14 @@
-# Workout Duration
+# Contentful Image Path from a URL asset field
 
-Simple App that works on the "Workout" model and calculates the Total Duration for all Exercises.
+A Simple Contentful App to generate a URL path from a asset field.
+
+https://user-images.githubusercontent.com/739061/115303286-5a0f9a80-a15b-11eb-8232-c057a5b3ea35.mov
+
+### App Defintion
+![image](https://user-images.githubusercontent.com/739061/115303412-7d3a4a00-a15b-11eb-8517-71c3b7fa26d4.png)
+
+### Appearance Settings
+![image](https://user-images.githubusercontent.com/739061/115303453-8f1bed00-a15b-11eb-876c-6b5265d5bda3.png)
 
 This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
 
