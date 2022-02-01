@@ -1,117 +1,65 @@
 // @ts-nocheck
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import {
-  TextInput,
-  Button,
-  Flex,
-  HelpText,
+  Paragraph,
+  ValidationMessage,
 } from "@contentful/forma-36-react-components";
 import { FieldExtensionSDK } from "@contentful/app-sdk";
+import { useField } from "../hooks/useField";
 
 interface FieldProps {
   sdk: FieldExtensionSDK;
 }
 
+const Container = ({ children }: { children: ReactNode }) => {
+  return <div className="entry-reference-container">{children}</div>;
+};
+
 const Field = (props: FieldProps) => {
-  const fieldValue = props.sdk.field.getValue();
+  const { sdk } = props;
+  const fieldValue = sdk.field.getValue();
   const [value, setValue] = useState(fieldValue || []);
 
-  const { fieldDescription, imageField } = props.sdk.parameters.instance;
+  const { imageField } = sdk.parameters.instance;
+  const mediaField = useField(sdk, imageField);
 
   useEffect(() => {
-    props.sdk.window.startAutoResizer();
+    sdk.window.startAutoResizer();
   });
-
-  const onExternalChange = (value) => {
-    setValue(value);
-  };
 
   useEffect(() => {
-    // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
-    const detachValueChangeHandler = props.sdk.field.onValueChanged(
-      onExternalChange
-    );
-    return detachValueChangeHandler;
-  });
+    sdk.entry.fields[imageField].onValueChanged((value) => {
+      if (sdk.entry.fields[imageField].getValue()) {
+        getImagePath();
+      } else {
+        setValue("");
+        sdk.field.removeValue();
+      }
+    });
+  }, [mediaField]);
 
-  const handleCalc = async () => {
-    if (props.sdk.entry.fields[imageField].getValue() !== undefined) {
-      const getPictureId = props.sdk.entry.fields[imageField].getValue().sys.id;
-      const getPictureWithId = await props.sdk.space.getAsset(getPictureId);
+  const getImagePath = async () => {
+    if (sdk.entry.fields[imageField].getValue()) {
+      const getPictureId = sdk.entry.fields[imageField].getValue()?.sys.id;
+      const getPictureWithId = await sdk.space.getAsset(getPictureId);
       const pictureURL = getPictureWithId.fields.file["en-US"].url;
 
-      onChange({
-        currentTarget: {
-          value: pictureURL,
-        },
-      });
-    } else {
-      onChange({
-        currentTarget: {
-          value: "",
-        },
-      });
+      setValue(pictureURL);
+      sdk.field.removeValue();
     }
   };
 
-  const onChange = (e) => {
-    const value = e.currentTarget.value;
-    setValue(value);
-    if (value) {
-      props.sdk.field.setValue(value);
-    } else {
-      props.sdk.field.removeValue();
-    }
-  };
-
-  function emptyField() {
-    props.sdk.field.setValue("");
-    // sdk.field.removeValue();
-    setValue("");
+  if (!mediaField) {
+    return (
+      <Container>
+        <ValidationMessage>
+          Please add a asset to generate the URL
+        </ValidationMessage>
+      </Container>
+    );
   }
 
-  console.log(value);
-
-  return (
-    <div>
-      <Flex className="container" style={{ marginBottom: 5 }}>
-        <TextInput
-          width="large"
-          type="text"
-          id="total-duration"
-          testId="total-duration"
-          value={value}
-          onChange={onChange}
-          disabled
-          className="input-total-duration"
-          style={{ marginRight: 10 }}
-        />
-
-        {value === undefined ? (
-          <Button
-            className="action-button"
-            buttonType="primary"
-            onClick={handleCalc}
-          >
-            Generate
-          </Button>
-        ) : (
-          <Button
-            buttonType="negative"
-            onClick={() => {
-              emptyField();
-            }}
-          >
-            Remove
-          </Button>
-        )}
-      </Flex>
-      <HelpText>
-        {fieldDescription ||
-          "Click generate to get the image path from the relevant field"}
-      </HelpText>
-    </div>
-  );
+  return <Paragraph>{value}</Paragraph>;
 };
 
 export default Field;
