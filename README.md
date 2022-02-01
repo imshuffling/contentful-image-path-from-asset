@@ -2,7 +2,7 @@
 
 This is an example usecase if a FE client cannot handle nested queries using the delivery API.
 
-https://user-images.githubusercontent.com/739061/115303286-5a0f9a80-a15b-11eb-8232-c057a5b3ea35.mov
+https://user-images.githubusercontent.com/739061/151998498-00400a0f-7e79-41f9-8682-2c619b589670.mov
 
 ### App Defintion
 ![image](https://user-images.githubusercontent.com/739061/115303412-7d3a4a00-a15b-11eb-8517-71c3b7fa26d4.png)
