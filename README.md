@@ -1,3 +1,5 @@
+[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=2c9Hi8zBBNirsefph3sFCh)
+
 # A Simple Contentful App to generate a URL path from a asset field.
 
 This is an example usecase if a FE client cannot handle nested queries using the delivery API.
@@ -44,5 +46,3 @@ To make your app look and feel like Contentful use the following libraries:
 [Read more](https://www.contentful.com/developers/docs/extensibility/app-framework/create-contentful-app/) and check out the video on how to use the CLI.
 
 Create Contentful App uses [Create React App](https://create-react-app.dev/). You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) and how to further customize your app.
-
-[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=2c9Hi8zBBNirsefph3sFCh)
