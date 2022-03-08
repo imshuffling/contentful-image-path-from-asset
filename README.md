@@ -1,4 +1,4 @@
-[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=2c9Hi8zBBNirsefph3sFCh)
+[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=4naoIsbPLrF4sNaVcV56Hq)
 
 # A Simple Contentful App to generate a URL path from a asset field.
 
